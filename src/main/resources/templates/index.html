@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+  <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<div class="z-1 toast-container position-absolute top-0 end-0 p-3">
+  <div th:if="${info != null}" class="toast bg-primary text-white fade show">
+    <div class="toast-header bg-primary text-white">
+      <strong class="me-auto"><i class='bx bxs-error-circle'></i> System</strong>
+      <small>Now</small>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body" th:text="${info}">
+    </div>
+  </div>
+  <div th:if="${success != null}" class="toast bg-danger text-white fade show">
+    <div class="toast-header bg-danger text-white">
+      <strong class="me-auto"><i class='bx bxs-error-circle'></i> System</strong>
+      <small>Now</small>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body" th:text="${success}">
+    </div>
+  </div>
+</div>
+<h1 class="text-primary">HELLO WORLD FROM INDEX</h1>
+
+<br><br>
+<a th:href="@{/home}" class="btn btn-primary">GO HOME</a>
+
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-ui.min.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
